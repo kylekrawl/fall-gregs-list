@@ -1,17 +1,10 @@
 function AutosController() {
   var autosService = new AutosService()
-
-  // Buttons
-  // Add New Auto
-  // Delete Auto
-  // Report Flag
-  // View More
-  // Filter / Search
   var autosElem = document.getElementById('autos-list')
   var autosFormElem = document.getElementById('add-auto-form')
-  var showButton = document.getElementById('show-button')
+  var showButton = document.getElementById('show-auto-form-button')
+
   function drawAutos() {
-    // WHERE ARE ALL THE AUTOS?
     var autos = autosService.getAutos()
     var template = ''
     for (var i = 0; i < autos.length; i++) {
@@ -45,7 +38,7 @@ function AutosController() {
     drawAutos()
   }
   var formstate = false
-  
+
   this.showAddAutoForm = function showAddAutoForm() {
     if (formstate) {
       showButton.innerText = 'Add Listing'
